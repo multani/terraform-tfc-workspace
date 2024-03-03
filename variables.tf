@@ -1,18 +1,33 @@
-variable "name" {}
-variable "organization" {}
+variable "name" {
+  description = "The name of the workspace"
+  type        = string
+}
+
+variable "organization" {
+  description = "The Terraform Cloud organization"
+  type        = string
+}
 
 variable "execution_mode" {
   default = "remote"
+  type    = string
 }
 
 variable "terraform_version" {
   type = string
 }
 
-variable "directory" {}
-variable "vcs_repos_name" {}
+variable "directory" {
+  type = string
+}
+
+variable "vcs_repos_name" {
+  type = string
+}
+
 variable "vcs_repos_branch" {
   default = "main"
+  type    = string
 }
 
 variable "trigger_patterns" {
