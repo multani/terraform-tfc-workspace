@@ -7,8 +7,8 @@ workspaces](https://developer.hashicorp.com/terraform/cloud-docs/workspaces).
 
 ```hcl
 module "test" {
-  source  = "app.terraform.io/multani/workspace/tfc"
-  version = "0.9.0"
+  source  = "multani/workspace/tfc"
+  version = "1.0.0"
 
   name         = "test"
   organization = data.tfe_organization.this.id
