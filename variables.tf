@@ -18,7 +18,8 @@ variable "terraform_version" {
 }
 
 variable "directory" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "vcs_repos_name" {
