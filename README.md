@@ -1,6 +1,7 @@
 # Terraform module to manage Terraform Cloud workspace
 
-This is a personal (opiniated) Terraform module to manage my Terraform Cloud workspaces.
+This is a personal (opiniated) Terraform module to manage my [Terraform Cloud
+workspaces](https://developer.hashicorp.com/terraform/cloud-docs/workspaces).
 
 ## How to use?
 
