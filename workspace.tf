@@ -8,7 +8,7 @@ resource "tfe_workspace" "this" {
 
   trigger_patterns = concat(
     # https://developer.hashicorp.com/terraform/cloud-docs/workspaces/settings/vcs#glob-patterns-for-automatic-run-triggering
-    ["/${var.directory}/**/*"],
+    ["${var.directory}/**/*"],
     var.trigger_patterns,
   )
   working_directory = var.directory

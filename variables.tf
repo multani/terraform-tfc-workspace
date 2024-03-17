@@ -19,7 +19,18 @@ variable "terraform_version" {
 
 variable "directory" {
   type    = string
-  default = null
+  default = ""
+
+  validation {
+    condition = (
+      var.directory == "" ||
+      (
+        startswith(var.directory, "/") &&
+        length(var.directory) > 2
+      )
+    )
+    error_message = "Directory should be either empty or a directory starting with /"
+  }
 }
 
 variable "vcs_repos_name" {
