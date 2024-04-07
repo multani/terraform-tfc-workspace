@@ -57,6 +57,12 @@ variable "email_notifications" {
   default = []
 }
 
+variable "http_notifications" {
+  description = "A map of name => URL to send HTTP notifications to."
+  type        = map(string)
+  default     = {}
+}
+
 variable "auto_apply" {
   type    = bool
   default = false
