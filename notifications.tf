@@ -11,7 +11,7 @@ resource "tfe_notification_configuration" "email" {
 
 
 resource "tfe_notification_configuration" "http" {
-  for_each = var.http_notifications
+  for_each = toset(var.http_notifications)
 
   workspace_id = tfe_workspace.this.id
   name         = "HTTP to: ${each.value.name}"
