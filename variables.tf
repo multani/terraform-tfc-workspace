@@ -59,8 +59,12 @@ variable "email_notifications" {
 
 variable "http_notifications" {
   description = "A map of name => URL to send HTTP notifications to."
-  type        = map(string)
-  default     = {}
+  type = list(object({
+    name     = string
+    url      = string
+    triggers = list(string)
+  }))
+  default = []
 }
 
 variable "auto_apply" {

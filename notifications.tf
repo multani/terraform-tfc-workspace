@@ -14,13 +14,13 @@ resource "tfe_notification_configuration" "http" {
   for_each = var.http_notifications
 
   workspace_id = tfe_workspace.this.id
-  name         = "HTTP to: ${each.key}"
+  name         = "HTTP to: ${each.value.name}"
   enabled      = true
 
-  triggers = var.notifications_triggers
+  triggers = each.value.triggers
 
   destination_type = "generic"
-  url              = each.value
+  url              = each.value.url
 }
 
 
