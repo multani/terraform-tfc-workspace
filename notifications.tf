@@ -1,7 +1,9 @@
 resource "tfe_notification_configuration" "email" {
+  # Not possible to enable email notifications with no users.
+  count = length(var.email_notifications) > 0 ? 1 : 0
+
   workspace_id = tfe_workspace.this.id
   name         = "Send email"
-  enabled      = true
 
   triggers = var.notifications_triggers
 
