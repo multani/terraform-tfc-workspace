@@ -8,15 +8,20 @@ resource "tfe_workspace" "this" {
 
   trigger_patterns = concat(
     # https://developer.hashicorp.com/terraform/cloud-docs/workspaces/settings/vcs#glob-patterns-for-automatic-run-triggering
-    ["${var.directory}/**/*"],
+    [
+      # /**/* matches every file in every directory
+      "${var.directory}/**/*",
+    ],
     var.trigger_patterns,
   )
   working_directory = var.directory
 
   vcs_repo {
-    identifier     = var.vcs_repos_name
-    branch         = var.vcs_repos_branch
-    oauth_token_id = var.vcs_oauth_token_id
+    identifier = var.vcs_repos_name
+    branch     = var.vcs_repos_branch
+
+    oauth_token_id             = var.vcs_oauth_token_id
+    github_app_installation_id = var.vcs_github_app_installation_id
   }
 
   auto_apply     = var.auto_apply

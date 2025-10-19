@@ -20,17 +20,6 @@ variable "terraform_version" {
 variable "directory" {
   type    = string
   default = ""
-
-  validation {
-    condition = (
-      var.directory == "" ||
-      (
-        startswith(var.directory, "/") &&
-        length(var.directory) > 2
-      )
-    )
-    error_message = "Directory should be either empty or a directory starting with /"
-  }
 }
 
 variable "vcs_repos_name" {
@@ -49,7 +38,13 @@ variable "trigger_patterns" {
 
 variable "vcs_oauth_token_id" {
   type      = string
+  default   = null
   sensitive = true
+}
+
+variable "vcs_github_app_installation_id" {
+  type    = string
+  default = null
 }
 
 variable "email_notifications" {
