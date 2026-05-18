@@ -19,7 +19,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
         with:
-          terraform_version: 1.15.2
+          terraform_version: 1.15.3
 
       - name: terraform init
         run: terraform init -backend=false
@@ -39,7 +39,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
         with:
-          terraform_version: 1.15.2
+          terraform_version: 1.15.3
 
       - name: Terraform init
         run: terraform init -backend=false
@@ -49,7 +49,7 @@ jobs:
         with:
           # https://github.com/terraform-linters/tflint/blob/master/docs/user-guide/plugins.md#avoiding-rate-limiting
           github_token: ${{ github.token }}
-          tflint_version: v0.62.0
+          tflint_version: v0.62.1
 
       - name: Init TFLint
         run: tflint --init
