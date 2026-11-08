@@ -67,6 +67,11 @@ variable "auto_apply" {
   default = false
 }
 
+variable "auto_apply_run_trigger" {
+  type    = bool
+  default = false
+}
+
 variable "notifications_triggers" {
   type = list(string)
   default = [

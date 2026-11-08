@@ -24,7 +24,9 @@ resource "tfe_workspace" "this" {
     github_app_installation_id = var.vcs_github_app_installation_id
   }
 
-  auto_apply     = var.auto_apply
+  auto_apply             = var.auto_apply
+  auto_apply_run_trigger = var.auto_apply_run_trigger
+
   queue_all_runs = false
 
   tag_names = var.tags
